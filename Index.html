@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing System</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Billing System</h1>
+        <div class="scanner">
+            <label for="barcode">Scan Barcode:</label>
+            <input type="text" id="barcode" placeholder="Scan barcode here">
+            <button onclick="addToBill()">Add to Bill</button>
+            <button onclick="deleteFromBill()">Delete from Bill</button>
+        </div>
+        <div class="product-info">
+            <h3>Product Information</h3>
+            <p id="productName">Name: </p>
+            <p id="productPrice">Price: </p>
+            <p id="productWeight">Weight: </p>
+        </div>
+        <div class="bill">
+            <h3>Bill</h3>
+            <ul id="billList"></ul>
+            <p>Total: $<span id="totalAmount">0.00</span></p>
+            <button onclick="printBill()">Print Bill</button>
+        </div>
+    </div>
+
+    <!-- Print Bill Modal -->
+    <div id="printModal" class="modal">
+        <div class="modal-content">
+            <h2>Bill Summary</h2>
+            <ul id="printBillList"></ul>
+            <p>Total: $<span id="printTotalAmount">0.00</span></p>
+            <img id="qrCode" alt="QR Code" src="https://via.placeholder.com/150">
+            <p>Scan to pay the bill</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script src="Web.js"></script>
+</body>
+</html>
